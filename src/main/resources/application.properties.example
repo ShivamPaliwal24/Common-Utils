@@ -1,0 +1,9 @@
+# Common Utils Library Configuration Example
+# This file shows available configuration options for the library
+
+# Enable or disable the utilities library
+common.utils.enabled=true
+
+# JSON Configuration
+# Enable pretty printing for JSON output
+common.utils.json.pretty-print=false
