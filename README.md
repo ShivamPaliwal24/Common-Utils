@@ -1,8 +1,25 @@
 # Common Utils Library
 
-A reusable Spring Boot utilities library that provides common helper methods for String, Date, JSON, and Collection operations. This library can be published to Maven Central via Sonatype and used as a dependency in any Java/Spring Boot project.
+A reusable Spring Boot utilities library that provides common helper methods for String, Date, JSON, and Collection operations. This library is ready to be published to **Maven Central via central.sonatype.com** and used as a dependency in any Java/Spring Boot project.
 
-## Features
+[![Maven Central](https://img.shields.io/badge/Maven%20Central-Ready-blue)]()
+[![Java](https://img.shields.io/badge/Java-17+-orange)]()
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.0-green)]()
+
+## 🚀 Quick Start for Publishing to Maven Central
+
+**New to publishing?** Follow this simple process:
+
+1. **Register**: Create account at [central.sonatype.com](https://central.sonatype.com/)
+2. **Verify**: Verify your namespace (instant for GitHub users: `io.github.yourusername`)
+3. **Configure**: Set up GPG keys and deployment token
+4. **Deploy**: Run `mvn clean deploy`
+5. **Done**: Wait 15 minutes - your library is live! 🎉
+
+📖 **[Complete Publishing Guide →](CENTRAL_PUBLISHER_GUIDE.md)**
+✅ **[Pre-Deployment Checklist →](PRE_DEPLOYMENT_CHECKLIST.md)**
+
+## ✨ Features
 
 - **StringUtils**: Common string manipulation operations (isEmpty, isBlank, capitalize, camelCase, truncate, mask, etc.)
 - **DateUtils**: Date and time operations (formatting, parsing, calculations, conversions)
@@ -10,33 +27,36 @@ A reusable Spring Boot utilities library that provides common helper methods for
 - **CollectionUtils**: Collection operations (isEmpty, partition, intersection, difference, etc.)
 - **Spring Boot Auto-Configuration**: Automatic setup when added as a dependency
 
-## Requirements
+## 📋 Requirements
 
 - Java 17 or higher
 - Spring Boot 3.2.0 or higher
-- Maven 3.6+ (for building)
+- Maven 3.6+ (for building and publishing)
 
-## Installation
+## 📦 Installation
 
-### Add as Maven Dependency
+After publishing to Maven Central, anyone can use your library:
 
-Once published to Maven Central, add this dependency to your `pom.xml`:
+### Maven
+
+Add this dependency to your `pom.xml`:
 
 ```xml
-
 <dependency>
-    <groupId>com.commonUtilscom.commonUtils</groupId>
+    <groupId>io.github.yourusername</groupId>
     <artifactId>common-utils</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
 
-### Add as Gradle Dependency
+> **Note:** Replace `io.github.yourusername` with your actual verified namespace
+
+### Gradle
 
 For Gradle projects, add to your `build.gradle`:
 
 ```gradle
-implementation 'com.commonUtils:common-utils:1.0.0'
+implementation 'io.github.yourusername:common-utils:1.0.0'
 ```
 
 ## Usage Examples

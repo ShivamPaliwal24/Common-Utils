@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-    Maven Settings Template for Sonatype Deployment
-    
+<!--
+    Maven Settings Template for Sonatype Central Publisher
+
     Copy this file to ~/.m2/settings.xml (Linux/Mac) or C:\Users\YourName\.m2\settings.xml (Windows)
     and replace the placeholders with your actual credentials.
+
+    How to get your credentials:
+    1. Go to https://central.sonatype.com/
+    2. Sign in with your account
+    3. Click on your profile → "Generate User Token"
+    4. Copy the username and password provided
+    5. Generate GPG keys: gpg --gen-key
 -->
 <settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0
           http://maven.apache.org/xsd/settings-1.2.0.xsd">
 
     <servers>
-        <!-- Sonatype OSSRH Server Credentials -->
+        <!-- Sonatype Central Publisher Token -->
         <server>
-            <id>ossrh</id>
-            <username>YOUR_SONATYPE_USERNAME</username>
-            <password>YOUR_SONATYPE_PASSWORD</password>
+            <id>central</id>
+            <username>YOUR_TOKEN_USERNAME</username>
+            <password>YOUR_TOKEN_PASSWORD</password>
         </server>
     </servers>
 
     <profiles>
         <profile>
-            <id>ossrh</id>
+            <id>central-publisher</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -29,15 +36,9 @@
                 <!-- GPG Configuration -->
                 <gpg.executable>gpg</gpg.executable>
                 <gpg.passphrase>YOUR_GPG_PASSPHRASE</gpg.passphrase>
-            </properties>
-        </profile>
 
-        <!-- Optional: Profile for releasing -->
-        <profile>
-            <id>release</id>
-            <properties>
-                <gpg.executable>gpg</gpg.executable>
-                <gpg.passphrase>YOUR_GPG_PASSPHRASE</gpg.passphrase>
+                <!-- Optional: Specify GPG key if you have multiple keys -->
+                <!-- <gpg.keyname>YOUR_KEY_ID</gpg.keyname> -->
             </properties>
         </profile>
     </profiles>
